@@ -1,0 +1,221 @@
+:root {
+    --color-black: #161623;
+    --color-white: #ffffff;
+    --color-blue: #094269;
+
+    --text-align: center;
+    --align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+    font-family: 'Times New Roman', Times, serif;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+header {
+    background-image: linear-gradient(to right, #220833, #1d1f21);
+    color: var(--color-white);
+    position: fixed;
+
+    display: flex;
+    justify-content: space-around;
+    max-width: 100%;
+    width: 100%;
+
+    align-items: var(--align-items);
+    text-align: var(--text-align);
+    padding: 0.3em;
+
+}
+
+#h2-portfolio {
+    font-size: 45px;
+}
+
+/*----- Animaçao na tag h1 - Marks Cruz -----*/
+
+h1 {
+    position: relative;
+    font-size: 90px;
+    color: transparent;
+}
+
+h1::before {
+    content: attr(data-text);
+    position: absolute;
+    color: var(--color-white);
+
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+
+    border-right: 1px solid var(--color-white);
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0%,10%,100% {
+        width: 0;
+    }
+
+    70%,80% {
+        width: 100%;
+    }
+}
+
+/*----- Barra De Navegção -----*/
+
+.nav-bar {
+    display: flex;
+    gap: 6rem;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    cursor: pointer;
+    align-items: var(--align-items);
+}
+
+.nav-bar > a {
+    position: relative;
+    color: var(--color-white);
+    letter-spacing: 1px;
+}
+
+.nav-bar a::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-white);
+
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.7s all;
+}
+
+.nav-bar a:hover {
+    color: var(--color-white);
+}
+
+.nav-bar a:hover::after {
+    width: 100%;
+}
+
+/*----- Seção Inicial -----*/
+
+.section-home {
+    background-image: linear-gradient(to right, #220833, #1d1f21);
+    height: 100vh;
+
+    display: flex;
+    justify-content: space-around;
+    padding: 130px 0 0 150px;
+
+    align-items: var(--align-items);
+    font-size: 58px;
+    font-weight: 600;
+}
+
+.section-home img {
+    margin-top: -110px;
+    height: 900px;
+    width: 900px;
+    border-radius: 50%;
+}
+
+hgroup {
+    margin-top: -20px;
+    color: #fff;
+    font-size: 95px;
+}
+
+hgroup h3{
+    font-size: 75px;
+}
+
+hgroup h5 {
+    font-size: 25px;
+}
+
+
+
+
+/*-----    Responsivo - Laptop   -----*/
+
+@media (min-width: 768px) and (max-width: 1366px) {
+    
+    header {
+        background-image: linear-gradient(to right, #220833, #1d1f21);
+        padding: 0.3em;
+    }
+
+    .nav-bar {
+        gap: 3rem
+    }
+
+    /*----- Títulos e subtítulos -----*/
+
+    h1 {
+        position: relative;
+        margin-left: -90px;
+        font-size: 85px;
+    }
+
+    h1::before {
+        content: attr(data-text);
+        position: absolute;
+        color: var(--color-white);
+    
+        width: 100px;
+        overflow: hidden;
+        white-space: nowrap;
+    
+        border-right: 1px solid var(--color-white);
+        animation: animate 4s linear infinite;
+    }
+    
+    @keyframes animate {
+        0%,10%,100% {
+            width: 0;
+        }
+    
+        70%,80% {
+            width: 100%;
+        }
+    }
+
+    h3 {
+        color: var(--color-white);
+        margin-left: -90px;
+        font-size: 61px;
+    }
+
+    h5 {
+        color: var(--color-white);
+        margin-left: -90px;
+        font-size: 35px;
+    }
+
+    /*----- Seção home -----*/
+
+    .section-home {
+        background-image: linear-gradient(to right, #220833, #1d1f21);
+    }
+
+    .section-home img {
+        margin-top: -120px;
+        height: 630px;
+        width: 630px;
+    }
+}

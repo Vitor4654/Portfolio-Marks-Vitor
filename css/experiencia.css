@@ -1,0 +1,155 @@
+:root {
+    --color-black: #161623;
+    --color-white: #ffffff;
+
+    --text-align: center;
+    --align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+    font-family: 'Times New Roman', Times, serif;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    background-color: var(--color-black);
+    color: #fff;
+}
+
+header {
+    background-image: linear-gradient(to right, #220833, #1d1f21);
+    color: var(--color-white);
+    position: fixed;
+
+    display: flex;
+    justify-content: space-around;
+    max-width: 100%;
+    width: 100%;
+
+    align-items: var(--align-items);
+    text-align: var(--text-align);
+    padding: 0.3em;
+}
+
+#port-h2 {
+    font-size: 45px;
+}
+
+/*----- Barra De Navegação -----*/
+
+.nav-bar {
+    display: flex;
+    gap: 6rem;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    cursor: pointer;
+    align-items: var(--align-items);
+}
+
+.nav-bar > a {
+    position: relative;
+    color: var(--color-white);
+    letter-spacing: 1px;
+}
+
+.nav-bar a::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-white);
+
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.7s all;
+}
+
+.nav-bar a:hover {
+    color: var(--color-white);
+}
+
+.nav-bar a:hover::after {
+    width: 100%;
+}
+
+/*----- Experiências -----*/
+
+.section-experiencias {
+    background-image: linear-gradient(to right, #220833, #1d1f21);
+    padding-top: 160px;
+    height: 100vh;
+    text-align: var(--text-align);
+    align-items: var(--align-items);
+}
+
+.section-experiencias > h2 {
+    margin-bottom: 80px;
+    font-size: 45px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.p-experiencias {
+    margin-left: 180px;
+    color: #fff;
+    font-size: 23px;
+    padding: 10px;
+}
+
+.p-experiencias > p {
+    margin-top: 10px;
+    padding-left: 20px;
+    text-align: left;
+    letter-spacing: 0.5px;
+}
+
+.section-experiencias img {
+    margin: -580px -600px -30px 80px;
+    height: 600px;
+    width: 650px;
+
+    border-radius: 50%;
+    color: whitesmoke;
+}
+
+/*-----      Responsivo      -----*/
+
+@media (min-width: 768px) and (max-width: 1366px) {
+    
+    header {
+        background-image: linear-gradient(to right, #220833, #1d1f21);
+        padding: 0.3em;
+    }
+
+    /*----- Experiências -----*/
+
+    .section-experiencias {
+        background-image: linear-gradient(to right, #220833, #1d1f21);
+        text-align: var(--text-align);
+        align-items: var(--align-items);
+    }
+
+    .section-experiencias img {
+        margin: -550px -550px 100px 80px;
+        height: 570px;
+        width: 560px;
+        border-radius: 50%;
+    }
+
+    .p-experiencias {
+        margin-left: 30px;
+        padding: 10px;
+    }
+
+    .p-experiencias > p {
+        margin-top: 3px;
+        font-size: 22px;
+    }
+}
